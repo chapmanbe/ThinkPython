@@ -1,4 +1,4 @@
-LATEX = latex
+LATEX = pdflatex
 
 DVIPS = dvips
 
@@ -17,18 +17,17 @@ PDFFLAGS = -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress \
 	ps2pdf $(PDFFLAGS) $<
 
 all:	book.tex
-	makeindex book
-	pdflatex book
+	makeindex book.tex
+	pdflatex book.tex
 	mv book.pdf thinkpython.pdf
-	evince thinkpython.pdf
 
 hevea:	book.tex header.html footer.html
 	# replace the pdfs with eps
 	sed s/.pdf/.eps/g book.tex > thinkpython.tex
-	latex thinkpython
+	pdflatex thinkpython
 	rm -rf html
 	mkdir html
-	hevea -fix -O -e latexonly htmlonly thinkpython
+	hevea -O -e latexonly htmlonly thinkpython
 # the following greps are a kludge to prevent imagen from seeing
 # the definitions in latexonly, and to avoid headers on the images
 	grep -v latexonly thinkpython.image.tex > a; mv a thinkpython.image.tex

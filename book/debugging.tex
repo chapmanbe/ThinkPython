@@ -1,0 +1,118 @@
+\section{What is debugging?}
+\index{debugging}
+\index{bug}
+
+\begin{quote}
+    The greatest pleasure in writing is rewriting. My early drafts are always wretched. At first a general verb like ``move'' is qulified by the adverb ``quickly.'' After sixty tries I come up with a particular, possibly witty verb and drop the adverb. Originally I wrote ``poetry suddenly left me,'' which after twleve drafts became ``poetry abandoned me''---with another sentence to avoid self-pity. When my doctor told me I had diabetes, I was incredulous. I said, ``You mean I am pre-diabetic.'' Writing in this book, I changed a verb to mock my silly presumption. ```You mean I am pre-diabetic,' I explanined.'' (Donald B. Hall, \em{Essays AFter Eighty,} p. 13)
+\end{quote}
+
+Programming is error-prone.  For whimsical reasons, programming errors
+are called {\bf bugs} and the process of tracking them down is called
+{\bf debugging}.
+\index{debugging}
+\index{bug}
+
+Three kinds of errors can occur in a program: syntax errors, runtime
+errors, and semantic errors. It is useful
+to distinguish between them in order to track them down more quickly.
+
+\subsection{Syntax errors}
+\index{syntax error}
+\index{error!syntax}
+\index{error message}
+
+Python can only execute a program if the syntax is
+correct; otherwise, the interpreter displays an error message.
+{\bf Syntax} refers to the structure of a program and the rules about
+that structure.
+For example, parentheses have to come in matching pairs, so
+{\tt (1 + 2)} is legal, but {\tt 8)} is a {\bf syntax error}.
+\index{syntax}
+\index{parentheses!matching}
+\index{syntax}
+\index{cummings, e. e.}
+
+In English, readers can tolerate most syntax errors, which is why we
+can read the poetry of e. e. cummings without spewing error messages.
+Python is not so forgiving.  If there is a single syntax error
+anywhere in your program, Python will display an error message and quit,
+and you will not be able to run your program. During the first few
+weeks of your programming career, you will probably spend a lot of
+time tracking down syntax errors.  As you gain experience, you will
+make fewer errors and find them faster.
+
+\subsection{Runtime errors}
+\label{runtime}
+
+The second type of error is a runtime error, so called because the
+error does not appear until after the program has started running.
+These errors are also called {\bf exceptions} because they usually
+indicate that something exceptional (and bad) has happened.
+\index{runtime error}
+\index{error!runtime}
+\index{exception}
+\index{safe language}
+\index{language!safe}
+
+Runtime errors are rare in the simple programs you will see in the
+first few chapters, so it might be a while before you encounter one.
+
+
+\subsection{Semantic errors}
+\index{semantics}
+\index{semantic error}
+\index{error!semantic}
+\index{error message}
+
+The third type of error is the {\bf semantic error}.  If there is a
+semantic error in your program, it will run successfully in the sense
+that the computer will not generate any error messages, but it will
+not do the right thing.  It will do something else.  Specifically, it
+will do what you told it to do.
+
+The problem is that the program you wrote is not the program you
+wanted to write.  The meaning of the program (its semantics) is wrong.
+Identifying semantic errors can be tricky because it requires you to work
+backward by looking at the output of the program and trying to figure
+out what it is doing.
+
+\subsection{Experimental debugging}
+
+One of the most important skills you will acquire is debugging.
+Although it can be frustrating, debugging is one of the most
+intellectually rich, challenging, and interesting parts of
+programming.
+\index{experimental debugging}
+\index{debugging!experimental}
+
+In some ways, debugging is like detective work.  You are confronted
+with clues, and you have to infer the processes and events that led
+to the results you see.
+
+Debugging is also like an experimental science.  Once you have an idea
+about what is going wrong, you modify your program and try again.  If
+your hypothesis was correct, then you can predict the result of the
+modification, and you take a step closer to a working program.  If
+your hypothesis was wrong, you have to come up with a new one.  As
+Sherlock Holmes pointed out, ``When you have eliminated the
+impossible, whatever remains, however improbable, must be the truth.''
+(A. Conan Doyle, {\em The Sign of Four})
+\index{Holmes, Sherlock}
+\index{Doyle, Arthur Conan}
+
+For some people, programming and debugging are the same thing.  That
+is, programming is the process of gradually debugging a program until
+it does what you want.  The idea is that you should start with a
+program that does {\em something} and make small modifications,
+debugging them as you go, so that you always have a working program.
+
+For example, Linux is an operating system that contains thousands of
+lines of code, but it started out as a simple program Linus Torvalds
+used to explore the Intel 80386 chip.  According to Larry Greenfield,
+``One of Linus's earlier projects was a program that would switch
+between printing AAAA and BBBB.  This later evolved to Linux.''
+({\em The Linux Users' Guide} Beta Version 1).
+\index{Linux}
+
+Later chapters will make more suggestions about debugging and other
+programming practices.
